@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+	<a class="navbar-brand" href="/books">BookHub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/books" routerLinkActive="active">Books</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+        	<a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+        	<a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+					<li class="nav-item dropdown">
+				    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="_authService.loggedIn()">User Actions</a>
+				    <div class="dropdown-menu">
+							<a class="dropdown-item" *ngIf="_authService.loggedIn()" routerLink="/userbooks" routerLinkActive="active"> <i class="fas fa-book"></i> User Books</a>
+							<a class="dropdown-item" *ngIf="_authService.loggedIn()" routerLink="/userbooks/create" routerLinkActive="active"> <i class="fas fa-plus"></i> Create User Books</a>
+							<a class="dropdown-item" *ngIf="_authService.loggedIn()" routerLink="/dashboard" routerLinkActive="active"> <i class="fab fa-whmcs"></i> Dashboard</a>
+				    </div>
+				  </li>
+	        <a class="nav-link" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+    </ul>
+  </div>
+</nav>

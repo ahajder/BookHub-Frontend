@@ -1,0 +1,23 @@
+
+.landing {
+  color: black;
+  margin-bottom: 40px;
+}
+
+.landing-inner {
+  padding-top: 80px;
+}
+
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}

@@ -1,0 +1,26 @@
+<!-- Book Form -->
+<br><br>
+<div class="post-form mb-3">
+  <div class="card">
+    <div class="card-header text-white">
+    <i class="fas fa-plus-square"></i> Add Your Book:
+    </div>
+    <div class="card-body">
+      <form [formGroup]="updateForm">
+				<div class="form-group">
+          <input type="text" class="form-control form-control-lg" placeholder="Title..." formControlName="title" #title/>
+  			</div>
+				<div class="form-group">
+          <input type="text" class="form-control form-control-lg" placeholder="Author..." formControlName="author" #author/>
+  			</div>
+        <div class="form-group">
+          <textarea class="form-control form-control-lg" placeholder="Book Description..." formControlName="description" #description></textarea>
+        </div>
+				<div class="text-center">
+					<button type="submit" class="btn btn-outline-info mr-3" (click)="updateBook(title.value, author.value, description.value)" [disabled]="updateForm.pristine || updateForm.invalid">Update</button>
+					<a href="/userbooks" class="btn btn-outline-warning">Back</a>
+				</div>
+      </form>
+    </div>
+  </div>
+</div>
